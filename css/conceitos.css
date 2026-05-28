@@ -39,6 +39,9 @@
   border-top-width: 3px;  /* linha colorida no topo */
   transition: transform 0.25s, box-shadow 0.25s;
   animation: fadeInUp 0.5s ease both;
+  overflow: hidden;        /* impede conteúdo de vazar para fora */
+  min-width: 0;            /* permite que o grid comprima o card corretamente */
+  word-break: break-word;  /* quebra palavras longas se necessário */
 }
 .conceito-card:hover {
   transform: translateY(-5px);
@@ -177,4 +180,11 @@
   color: var(--text-muted);
   font-size: 0.82rem;
   border-top: 1px solid var(--border);
+}
+
+/* Garante que blocos de código dentro dos cards não vazem */
+.conceito-card .code-block {
+  overflow-x: auto;
+  white-space: pre-wrap;   /* quebra linhas longas */
+  word-break: break-all;
 }
