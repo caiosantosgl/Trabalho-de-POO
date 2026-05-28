@@ -1,7 +1,5 @@
-// =============================================
 // navbar.js — Controla o menu de navegação
 // e protege as páginas de quem não está logado
-// =============================================
 
 /**
  * Verifica se tem alguém logado.

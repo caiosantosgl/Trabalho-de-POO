@@ -1,7 +1,5 @@
-// =============================================
 // cep.js — Lógica de busca de CEP usando POO
 // Consome a API gratuita: https://viacep.com.br
-// =============================================
 
 /**
  * CLASSE BuscaCEP

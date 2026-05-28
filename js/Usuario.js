@@ -1,8 +1,6 @@
-// =============================================
 // Usuario.js — Classe principal do projeto
 // Aqui mostramos o uso de POO: classe, atributos,
 // métodos e instâncias de objetos
-// =============================================
 
 /**
  * CLASSE Usuario
@@ -42,7 +40,6 @@ class Usuario {
     return `Olá, meu nome é ${this.nome} e meu email é ${this.email}`;
   }
 }
-
 
 // =============================================
 // GerenciadorDeUsuarios — controla o "banco de dados"

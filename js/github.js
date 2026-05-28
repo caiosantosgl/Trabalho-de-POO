@@ -1,7 +1,5 @@
-// =============================================
 // github.js — Lógica de busca no GitHub usando POO
 // Consome a API pública: https://api.github.com
-// =============================================
 
 /**
  * CLASSE BuscaGitHub
