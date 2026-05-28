@@ -1,0 +1,188 @@
+/* Estilos da página que explica os conceitos de POO. */
+
+/* Cores extras usadas nos cards. */
+:root {
+	--yellow: #fbbf24;
+	--red:    #f87171;
+}
+
+/* Etiqueta pequena que aparece acima do título. */
+.badge {
+	display: inline-block;
+	font-family: var(--font-code);
+	font-size: 0.8rem;
+	color: var(--cyan);
+	background: rgba(0, 229, 255, 0.1);
+	border: 1px solid rgba(0, 229, 255, 0.3);
+	padding: 0.3rem 0.9rem;
+	border-radius: 20px;
+	margin-bottom: 0.8rem;
+	letter-spacing: 1px;
+}
+
+/* Grade onde ficam os cards dos conceitos. */
+.conceitos-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 1.5rem;
+	margin-bottom: 3rem;
+}
+
+/* Estilo de cada card de conceito. */
+.conceito-card {
+	background: var(--bg2);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 1.8rem;
+	border-top-width: 3px;  /* linha colorida no topo */
+	transition: transform 0.25s, box-shadow 0.25s;
+	animation: fadeInUp 0.5s ease both;
+	overflow: hidden;        /* evita que algo saia do card */
+	min-width: 0;            /* ajuda o card a diminuir em telas menores */
+	word-break: break-word;  /* quebra textos grandes quando precisar */
+}
+.conceito-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+}
+
+/* Animação dos cards entrando na tela. */
+@keyframes fadeInUp {
+	from { opacity: 0; transform: translateY(20px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Faz cada card aparecer com um pequeno atraso. */
+.conceito-card:nth-child(1) { animation-delay: 0.1s; }
+.conceito-card:nth-child(2) { animation-delay: 0.2s; }
+.conceito-card:nth-child(3) { animation-delay: 0.3s; }
+.conceito-card:nth-child(4) { animation-delay: 0.4s; }
+.conceito-card:nth-child(5) { animation-delay: 0.5s; }
+.conceito-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Cores usadas na borda de cima dos cards. */
+.border-cyan   { border-top-color: var(--cyan); }
+.border-blue   { border-top-color: var(--blue); }
+.border-purple { border-top-color: var(--purple); }
+.border-green  { border-top-color: var(--green); }
+.border-yellow { border-top-color: var(--yellow); }
+.border-red    { border-top-color: var(--red); }
+
+/* Parte de cima do card, com número e etiqueta. */
+.card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+.card-num {
+	font-family: var(--font-code);
+	font-size: 0.85rem;
+	color: var(--text-muted);
+	font-weight: 700;
+}
+.card-tag {
+	font-size: 0.75rem;
+	color: var(--text-muted);
+	background: rgba(255,255,255,0.05);
+	border: 1px solid var(--border);
+	padding: 0.2rem 0.6rem;
+	border-radius: 20px;
+}
+
+/* Título de cada conceito. */
+.conceito-card h2 {
+	font-size: 1.6rem;
+	font-weight: 800;
+	margin-bottom: 0.8rem;
+}
+
+/* Texto explicando cada conceito. */
+.conceito-card p {
+	color: var(--text-muted);
+	font-size: 0.9rem;
+	line-height: 1.65;
+	margin-bottom: 0.5rem;
+}
+.conceito-card p code {
+	font-family: var(--font-code);
+	font-size: 0.82rem;
+	color: var(--yellow);
+	background: rgba(251,191,36,0.1);
+	padding: 0.1rem 0.4rem;
+	border-radius: 4px;
+}
+
+/* Área com um exemplo maior de código. */
+.exemplo-completo {
+	background: var(--bg2);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	overflow: hidden;
+	margin-bottom: 2rem;
+}
+
+.exemplo-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.9rem 1.5rem;
+	border-bottom: 1px solid var(--border);
+	background: rgba(255,255,255,0.03);
+}
+
+.exemplo-label {
+	font-family: var(--font-code);
+	font-size: 0.78rem;
+	color: var(--text-muted);
+	letter-spacing: 1px;
+}
+
+.btn-copiar {
+	background: rgba(0,229,255,0.1);
+	border: 1px solid rgba(0,229,255,0.3);
+	color: var(--cyan);
+	padding: 0.35rem 0.9rem;
+	border-radius: 6px;
+	font-size: 0.8rem;
+	cursor: pointer;
+	font-family: var(--font-body);
+	transition: all 0.2s;
+}
+.btn-copiar:hover {
+	background: rgba(0,229,255,0.2);
+}
+
+.exemplo-completo .code-block {
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	padding: 1.8rem;
+}
+
+/* Pequenos ajustes no menu. */
+.nav-right {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
+.nav-user {
+	font-size: 0.85rem;
+	color: var(--text-muted);
+}
+
+/* Rodapé da página. */
+.footer {
+	text-align: center;
+	padding: 2rem;
+	color: var(--text-muted);
+	font-size: 0.82rem;
+	border-top: 1px solid var(--border);
+}
+
+/* Garante que os exemplos de código não saiam do card. */
+.conceito-card .code-block {
+	overflow-x: auto;
+	white-space: pre-wrap;   /* quebra linhas longas */
+	word-break: break-all;
+}

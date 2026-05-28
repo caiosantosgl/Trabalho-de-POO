@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>POO na Prática | Login</title>
+	<link rel="stylesheet" href="css/global.css" />
+	<link rel="stylesheet" href="css/login.css" />
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+	<!-- Fundo decorativo da tela de login -->
+	<div class="bg-blobs">
+		<div class="blob blob-1"></div>
+		<div class="blob blob-2"></div>
+		<div class="blob blob-3"></div>
+	</div>
+
+	<div class="login-container">
+
+		<!-- Título e identificação do trabalho -->
+		<div class="login-header">
+			<div class="logo-tag">&lt;POO /&gt;</div>
+			<h1>POO na Prática</h1>
+			<p>Trabalho de Programação Orientada a Objetos</p>
+		</div>
+
+		<!-- Botões para trocar entre login e cadastro -->
+		<div class="tab-buttons">
+			<button class="tab-btn active" id="btn-login" onclick="mostrarAba('login')">
+				Entrar
+			</button>
+			<button class="tab-btn" id="btn-cadastro" onclick="mostrarAba('cadastro')">
+				Cadastrar
+			</button>
+		</div>
+
+		<!-- Parte do login -->
+		<div class="form-box" id="form-login">
+			<h2>Bem-vindo de volta!</h2>
+			<p class="form-sub">Entre com seu email e senha</p>
+
+			<div class="input-group">
+				<label for="login-email">Email</label>
+				<input type="email" id="login-email" placeholder="seu@email.com" />
+			</div>
+
+			<div class="input-group">
+				<label for="login-senha">Senha</label>
+				<input type="password" id="login-senha" placeholder="••••••••" />
+			</div>
+
+			<!-- Aqui aparece a mensagem para o usuário -->
+			<div class="mensagem" id="msg-login"></div>
+
+			<button class="btn-primary" onclick="fazerLogin()">Entrar</button>
+
+			<p class="hint-text">
+				Lembre: use <code>admin123</code> como email e senha para o admin
+			</p>
+		</div>
+
+		<!-- Parte do cadastro -->
+		<div class="form-box hidden" id="form-cadastro">
+			<h2>Criar conta</h2>
+			<p class="form-sub">Preencha os campos abaixo</p>
+
+			<div class="input-group">
+				<label for="cad-nome">Nome completo</label>
+				<input type="text" id="cad-nome" placeholder="Seu nome" />
+			</div>
+
+			<div class="input-group">
+				<label for="cad-email">Email</label>
+				<input type="email" id="cad-email" placeholder="seu@email.com" />
+			</div>
+
+			<div class="input-group">
+				<label for="cad-senha">Senha</label>
+				<input type="password" id="cad-senha" placeholder="Mínimo 6 caracteres" />
+			</div>
+
+			<div class="input-group">
+				<label for="cad-confirmar">Confirmar senha</label>
+				<input type="password" id="cad-confirmar" placeholder="Repita a senha" />
+			</div>
+
+			<div class="mensagem" id="msg-cadastro"></div>
+
+			<button class="btn-primary" onclick="fazerCadastro()">Criar conta</button>
+		</div>
+
+	</div>
+
+	<script src="js/Usuario.js"></script>
+	<script src="js/login.js"></script>
+</body>
+</html>

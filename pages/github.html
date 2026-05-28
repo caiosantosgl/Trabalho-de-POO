@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>POO na Prática | GitHub</title>
+	<link rel="stylesheet" href="../css/global.css" />
+	<link rel="stylesheet" href="../css/github.css" />
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+	<!-- Menu usado nas páginas internas -->
+	<nav class="navbar">
+		<div class="nav-logo">&lt;POO /&gt;</div>
+		<ul class="nav-links">
+			<li><a href="conceitos.html">Conceitos</a></li>
+			<li><a href="cep.html">ViaCEP</a></li>
+			<li><a href="github.html">GitHub</a></li>
+		</ul>
+		<div class="nav-right">
+			<span class="nav-user">👤 <span id="nav-usuario-nome"></span></span>
+			<button class="btn-logout" onclick="fazerLogout()">Sair</button>
+		</div>
+	</nav>
+
+	<!-- Conteúdo principal da página -->
+	<main class="main-content">
+
+		<div class="section-title">
+			<div class="badge-purple">API Externa</div>
+			<h1>Perfil <span class="text-purple">GitHub</span></h1>
+			<p>Busque qualquer usuário e veja seus repositórios e informações.</p>
+		</div>
+
+		<!-- Caixa de busca do usuário do GitHub -->
+		<div class="busca-card">
+			<div class="api-info">
+				<span class="api-badge-purple">📡 API</span>
+				<span>GitHub — <code>https://api.github.com/users/{username}</code></span>
+			</div>
+
+			<div class="busca-form">
+				<div class="input-gh-wrapper">
+					<span class="input-icon">🔍</span>
+					<input
+						type="text"
+						id="input-github"
+						placeholder="Digite o nome de usuário (ex: torvalds)"
+						onkeydown="if(event.key==='Enter') buscarGitHub()"
+					/>
+				</div>
+				<button class="btn-buscar-gh" onclick="buscarGitHub()" id="btn-gh">
+					Buscar
+				</button>
+			</div>
+
+			<div class="mensagem" id="msg-github"></div>
+		</div>
+
+		<!-- Perfil encontrado. Começa escondido e aparece depois da busca -->
+		<div class="perfil-section hidden" id="perfil-section">
+
+			<!-- Card com as informações principais do perfil -->
+			<div class="perfil-card">
+				<div class="perfil-avatar-wrap">
+					<img src="" alt="Avatar" id="perfil-avatar" class="perfil-avatar"/>
+				</div>
+				<div class="perfil-info">
+					<h2 id="perfil-nome"></h2>
+					<p class="perfil-login" id="perfil-login"></p>
+					<p class="perfil-bio" id="perfil-bio"></p>
+					<div class="perfil-stats">
+						<div class="stat-item">
+							<span class="stat-valor" id="stat-repos"></span>
+							<span class="stat-label">Repositórios</span>
+						</div>
+						<div class="stat-item">
+							<span class="stat-valor" id="stat-followers"></span>
+							<span class="stat-label">Seguidores</span>
+						</div>
+						<div class="stat-item">
+							<span class="stat-valor" id="stat-following"></span>
+							<span class="stat-label">Seguindo</span>
+						</div>
+					</div>
+					<div class="perfil-detalhes">
+						<span class="detalhe-item" id="detalhe-empresa"></span>
+						<span class="detalhe-item" id="detalhe-local"></span>
+						<span class="detalhe-item" id="detalhe-blog"></span>
+					</div>
+					<a href="#" target="_blank" id="perfil-link" class="btn-gh-link">
+						Ver perfil completo no GitHub ↗
+					</a>
+				</div>
+			</div>
+
+			<!-- Área onde ficam os repositórios do perfil -->
+			<div class="repos-section">
+				<h3 class="repos-titulo">
+					📁 Repositórios públicos
+					<span class="repos-count" id="repos-count"></span>
+				</h3>
+				<div class="repos-grid" id="repos-grid">
+					<!-- O JavaScript cria os cards dos repositórios aqui -->
+				</div>
+			</div>
+
+		</div>
+
+	</main>
+
+	<footer class="footer">
+		<p>© 2026 — Trabalho de Programação Orientada a Objetos</p>
+	</footer>
+
+	<script src="../js/Usuario.js"></script>
+	<script src="../js/navbar.js"></script>
+	<script src="../js/github.js"></script>
+</body>
+</html>

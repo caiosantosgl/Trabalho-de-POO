@@ -1,0 +1,258 @@
+/* Estilos da página que faz a busca de CEP. */
+
+.badge-green {
+	display: inline-block;
+	font-family: var(--font-code);
+	font-size: 0.8rem;
+	color: var(--green);
+	background: rgba(34, 211, 160, 0.1);
+	border: 1px solid rgba(34, 211, 160, 0.3);
+	padding: 0.3rem 0.9rem;
+	border-radius: 20px;
+	margin-bottom: 0.8rem;
+	letter-spacing: 1px;
+}
+
+/* Caixa principal da busca de CEP. */
+.busca-card {
+	background: var(--bg2);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 2rem;
+	margin-bottom: 2rem;
+	max-width: 680px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Linha que mostra a API usada. */
+.api-info {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-family: var(--font-code);
+	font-size: 0.78rem;
+	color: var(--text-muted);
+	background: rgba(255,255,255,0.03);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	padding: 0.6rem 1rem;
+	margin-bottom: 1.5rem;
+}
+.api-badge {
+	background: rgba(34,211,160,0.12);
+	color: var(--green);
+	border: 1px solid rgba(34,211,160,0.3);
+	padding: 0.2rem 0.5rem;
+	border-radius: 4px;
+	font-size: 0.72rem;
+}
+.api-info code {
+	color: var(--cyan);
+	word-break: break-all;
+}
+
+/* Campo de CEP e botão de busca. */
+.busca-form {
+	display: flex;
+	gap: 0.8rem;
+	margin-bottom: 1rem;
+}
+
+.input-cep-wrapper {
+	flex: 1;
+	position: relative;
+}
+.input-icon {
+	position: absolute;
+	left: 0.9rem;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 1rem;
+}
+.input-cep-wrapper input {
+	width: 100%;
+	padding: 0.75rem 1rem 0.75rem 2.6rem;
+	background: var(--bg3);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	color: var(--text);
+	font-family: var(--font-code);
+	font-size: 1rem;
+	outline: none;
+	transition: border-color 0.2s;
+	letter-spacing: 1px;
+}
+.input-cep-wrapper input:focus {
+	border-color: var(--green);
+}
+
+.btn-buscar {
+	padding: 0.75rem 1.8rem;
+	background: linear-gradient(135deg, var(--green), #059669);
+	color: #0a0e1a;
+	border: none;
+	border-radius: 8px;
+	font-family: var(--font-body);
+	font-weight: 700;
+	font-size: 0.95rem;
+	cursor: pointer;
+	transition: opacity 0.2s, transform 0.2s;
+	white-space: nowrap;
+}
+.btn-buscar:hover {
+	opacity: 0.88;
+	transform: translateY(-1px);
+}
+.btn-buscar:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+	transform: none;
+}
+
+/* Caixa onde aparece o endereço encontrado. */
+.resultado-cep {
+	margin-top: 1.5rem;
+	background: var(--bg3);
+	border: 1px solid var(--green);
+	border-radius: 10px;
+	overflow: hidden;
+	animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+	from { opacity: 0; transform: translateY(10px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+.resultado-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 1.5rem;
+	border-bottom: 1px solid var(--border);
+	background: rgba(34,211,160,0.06);
+}
+.resultado-cep-numero {
+	font-family: var(--font-code);
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: var(--green);
+	letter-spacing: 2px;
+}
+.resultado-badge {
+	font-size: 0.8rem;
+	color: var(--green);
+	background: rgba(34,211,160,0.12);
+	border: 1px solid rgba(34,211,160,0.3);
+	padding: 0.25rem 0.7rem;
+	border-radius: 20px;
+}
+
+/* Organização dos dados do endereço em duas colunas. */
+.endereco-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0;
+}
+.endereco-item {
+	padding: 0.9rem 1.5rem;
+	border-right: 1px solid var(--border);
+	border-bottom: 1px solid var(--border);
+}
+.endereco-item:nth-child(even) {
+	border-right: none;
+}
+.endereco-label {
+	display: block;
+	font-size: 0.72rem;
+	color: var(--text-muted);
+	font-family: var(--font-code);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-bottom: 0.3rem;
+}
+.endereco-valor {
+	display: block;
+	font-size: 0.95rem;
+	font-weight: 600;
+	color: var(--text);
+}
+
+/* Histórico das últimas buscas. */
+.historico-section {
+	max-width: 680px;
+	margin: 0 auto 2rem;
+}
+.historico-section h3 {
+	font-size: 1rem;
+	color: var(--text-muted);
+	margin-bottom: 0.8rem;
+}
+.historico-lista {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+.historico-item {
+	background: var(--bg2);
+	border: 1px solid var(--border);
+	color: var(--text-muted);
+	font-family: var(--font-code);
+	font-size: 0.8rem;
+	padding: 0.4rem 0.9rem;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.2s;
+}
+.historico-item:hover {
+	border-color: var(--green);
+	color: var(--green);
+}
+.historico-item strong {
+	color: var(--text);
+}
+
+/* Card explicando como a POO aparece nessa página. */
+.explicacao-card {
+	max-width: 680px;
+	margin: 0 auto;
+	background: var(--bg2);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 2rem;
+}
+.explicacao-card h3 {
+	font-size: 1.1rem;
+	margin-bottom: 0.7rem;
+}
+.explicacao-card p {
+	color: var(--text-muted);
+	font-size: 0.9rem;
+	line-height: 1.65;
+}
+.explicacao-card p code {
+	font-family: var(--font-code);
+	color: var(--cyan);
+	background: rgba(0,229,255,0.08);
+	padding: 0.1rem 0.4rem;
+	border-radius: 4px;
+}
+
+/* Ajuste do menu nessa página. */
+.nav-right {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+}
+.nav-user {
+	font-size: 0.85rem;
+	color: var(--text-muted);
+}
+.footer {
+	text-align: center;
+	padding: 2rem;
+	color: var(--text-muted);
+	font-size: 0.82rem;
+	border-top: 1px solid var(--border);
+}
