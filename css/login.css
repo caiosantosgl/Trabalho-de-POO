@@ -163,3 +163,165 @@ body {
   padding: 0.1rem 0.4rem;
   border-radius: 4px;
 }
+
+/* =============================================
+   RESPONSIVIDADE — tela de login/cadastro
+   ============================================= */
+
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    min-height: 100svh;
+    padding: 1.25rem;
+  }
+
+  .login-container {
+    max-width: 460px;
+    padding: 2rem;
+    margin: clamp(0.5rem, 4vh, 2rem) auto;
+  }
+
+  .blob {
+    filter: blur(65px);
+  }
+
+  .blob-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .blob-2 {
+    width: 280px;
+    height: 280px;
+  }
+
+  .blob-3 {
+    width: 210px;
+    height: 210px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0.85rem;
+  }
+
+  .login-container {
+    padding: 1.35rem;
+    border-radius: 16px;
+  }
+
+  .login-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .logo-tag {
+    font-size: 0.78rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .login-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .login-header p {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .tab-buttons {
+    margin-bottom: 1.45rem;
+  }
+
+  .tab-btn {
+    padding: 0.55rem 0.4rem;
+    font-size: 0.84rem;
+  }
+
+  .form-box h2 {
+    font-size: 1.15rem;
+  }
+
+  .form-sub {
+    font-size: 0.8rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .input-group {
+    margin-bottom: 0.95rem;
+  }
+
+  .input-group label {
+    font-size: 0.8rem;
+  }
+
+  .input-group input {
+    padding: 0.72rem 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    padding: 0.78rem;
+    font-size: 0.93rem;
+  }
+
+  .mensagem.erro,
+  .mensagem.sucesso {
+    font-size: 0.78rem;
+    padding: 0.65rem 0.8rem;
+  }
+
+  .hint-text {
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  .blob {
+    filter: blur(50px);
+    opacity: 0.14;
+  }
+
+  .blob-1 {
+    width: 220px;
+    height: 220px;
+    top: -70px;
+    left: -80px;
+  }
+
+  .blob-2 {
+    width: 220px;
+    height: 220px;
+    right: -90px;
+    bottom: -80px;
+  }
+
+  .blob-3 {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media (max-width: 340px) {
+  .login-container {
+    padding: 1.1rem;
+  }
+
+  .login-header h1 {
+    font-size: 1.35rem;
+  }
+
+  .tab-btn {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-height: 650px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .login-container {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+}
