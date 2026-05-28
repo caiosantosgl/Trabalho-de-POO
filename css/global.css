@@ -1,0 +1,250 @@
+/* =============================================
+   global.css — Estilos compartilhados por todas
+   as páginas do projeto
+   ============================================= */
+
+/* Importa as fontes do Google */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap');
+
+/* Variáveis de cor — mudar aqui afeta o site inteiro */
+:root {
+  --bg:        #0a0e1a;       /* fundo escuro principal */
+  --bg2:       #111827;       /* fundo dos cards */
+  --bg3:       #1a2235;       /* fundo de inputs */
+  --border:    #2a3a5c;       /* cor das bordas */
+  --text:      #e2e8f0;       /* texto principal */
+  --text-muted:#7a8ba8;       /* texto secundário */
+  --cyan:      #00e5ff;       /* destaque ciano */
+  --blue:      #4f8ef7;       /* destaque azul */
+  --purple:    #a855f7;       /* destaque roxo */
+  --green:     #22d3a0;       /* destaque verde */
+  --red:       #f87171;       /* erros */
+  --yellow:    #fbbf24;       /* avisos */
+  --radius:    12px;          /* arredondamento dos cards */
+  --font-body: 'Syne', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+}
+
+/* Reset básico — zera margens e define box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo geral do body */
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Links sem sublinhado por padrão */
+a {
+  color: var(--cyan);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---- NAVBAR (menu de navegação) ---- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 14, 26, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar .nav-logo {
+  font-family: var(--font-code);
+  font-size: 1.1rem;
+  color: var(--cyan);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Links do menu */
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(0, 229, 255, 0.1);
+  color: var(--cyan);
+  text-decoration: none;
+}
+
+/* Botão de logout no canto direito */
+.btn-logout {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.btn-logout:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* ---- CONTEÚDO PRINCIPAL ---- */
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* ---- TÍTULO DE SEÇÃO ---- */
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-title h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.section-title p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ---- CARDS GENÉRICOS ---- */
+.card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* ---- BLOCOS DE CÓDIGO ---- */
+.code-block {
+  background: #0d1117;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.2rem 1.5rem;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  line-height: 1.7;
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+/* Cores para simular syntax highlighting */
+.code-block .kw  { color: #ff7b72; }  /* palavras-chave: class, def, etc */
+.code-block .fn  { color: #d2a8ff; }  /* funções e métodos */
+.code-block .str { color: #a5d6ff; }  /* strings */
+.code-block .cm  { color: #8b949e; }  /* comentários */
+.code-block .nb  { color: #79c0ff; }  /* nomes built-in */
+
+/* ---- BOTÃO PRIMÁRIO ---- */
+.btn-primary {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  color: #0a0e1a;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* ---- INPUTS ---- */
+.input-group {
+  margin-bottom: 1.2rem;
+}
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.5px;
+}
+.input-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.input-group input:focus {
+  border-color: var(--cyan);
+}
+
+/* ---- MENSAGENS DE ERRO E SUCESSO ---- */
+.mensagem {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s, padding 0.3s, margin 0.3s;
+}
+.mensagem.erro {
+  max-height: 80px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid var(--red);
+  color: var(--red);
+}
+.mensagem.sucesso {
+  max-height: 80px;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(34, 211, 160, 0.12);
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
+/* ---- UTILITÁRIOS ---- */
+.hidden { display: none !important; }
+.text-cyan   { color: var(--cyan); }
+.text-blue   { color: var(--blue); }
+.text-purple { color: var(--purple); }
+.text-green  { color: var(--green); }
